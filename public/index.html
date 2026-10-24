@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Voltage Champions</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- DISPLAY -->
+        <section id="displayView" class="view">
+
+            <header>
+
+                <div>
+                    <h1>⚡ VOLTAGE</h1>
+                    <h2>CHAMPIONS</h2>
+                </div>
+
+                <div id="roundDisplay">
+                    ROUND <span id="roundNumber">0</span>
+                </div>
+
+            </header>
+
+            <main>
+
+                <div class="challenge">
+
+                    <p id="roundName">
+                        Welcome!
+                    </p>
+
+                    <h2 id="challengeText">
+                        Get ready...
+                    </h2>
+
+                    <div id="timer">
+                        30
+                    </div>
+
+                    <div id="event">
+                        Welcome to Voltage Champions!
+                    </div>
+
+                </div>
+
+                <div id="leaderboard"></div>
+
+            </main>
+
+        </section>
+
+
+        <!-- HOST -->
+        <section id="hostView" class="view hidden">
+
+            <h1>🎮 HOST CONTROL</h1>
+
+            <div class="controlButtons">
+
+                <button onclick="startGame()">
+                    ▶ START
+                </button>
+
+                <button onclick="pauseGame()">
+                    ⏸ PAUSE
+                </button>
+
+                <button onclick="previousRound()">
+                    ◀ PREVIOUS
+                </button>
+
+                <button onclick="nextRound()">
+                    NEXT ▶
+                </button>
+
+                <button onclick="resetTimer()">
+                    ⏱ RESET TIMER
+                </button>
+
+                <button
+                    class="danger"
+                    onclick="resetGame()"
+                >
+                    🔄 RESET GAME
+                </button>
+
+            </div>
+
+            <h2>Team Scores</h2>
+
+            <div id="hostTeams"></div>
+
+        </section>
+
+
+        <!-- LEADER -->
+        <section id="leaderView" class="view hidden">
+
+            <h1 id="leaderTitle">
+                📱 LEADER CONTROL
+            </h1>
+
+            <p>
+                Award points when your team wins.
+            </p>
+
+            <div id="leaderTeams"></div>
+
+        </section>
+
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
